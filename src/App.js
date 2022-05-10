@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { isFocusable } from "@testing-library/user-event/dist/utils";
+import Stake from "./components/Stake/Stake";
+import Send from "./components/Send/Send";
+import Header from "./components/Header/Header";
 
 function App() {
   const [currentAccount, setCurrentAccount] = useState("");
@@ -99,7 +101,12 @@ function App() {
 
   const renderNotConnectedContainer = () => (
     <div className="connect-wallet-container">
-      <button className="connect-wallet-button" onClick={connectWallet}>
+      <h1>Welcome to Toucan Wallet</h1>
+      <p>Connect your wallet to get started</p>
+      <button
+        className="cta-button connect-wallet-button"
+        onClick={connectWallet}
+      >
         Connect Wallet
       </button>
     </div>
@@ -109,14 +116,35 @@ function App() {
     if (network !== "0x13881") {
       console.log("network:", network);
       return (
-        <div className="connect-wallet-contai">
+        <div className="connect-wallet-container">
           <p>Please connect to the Mumbai Testnet</p>
-          <button onClick={switchNetwork}>Click here to switch</button>
+          <button
+            className="cta-button connect-wallet-button"
+            onClick={switchNetwork}
+          >
+            Click here to switch
+          </button>
         </div>
       );
     }
+    // staking pools section -> h1 that says "stake your crypto"
+    // user transaction history section -> "Transaction hisotry"
+    return (
+      <div>
+        <div className="main">
+          <Send />
 
-    return <div>Testing - user is logged in </div>;
+          <div className="stake section">
+            <h1>Stake your Crypto</h1>
+            <Stake />
+          </div>
+
+          <div className="transaction-history section">
+            <h1>Transaction history</h1>
+          </div>
+        </div>
+      </div>
+    );
   };
 
   useEffect(() => {
@@ -125,8 +153,13 @@ function App() {
 
   return (
     <div className="App">
-      {!currentAccount && renderNotConnectedContainer()}
-      {currentAccount && renderWallet()}
+      {currentAccount && (
+        <Header network={network} currentAccount={currentAccount} />
+      )}
+      <div className="app-container">
+        {!currentAccount && renderNotConnectedContainer()}
+        {currentAccount && renderWallet()}
+      </div>
     </div>
   );
 }

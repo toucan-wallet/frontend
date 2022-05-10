@@ -1,0 +1,25 @@
+
+/* STAKE SECTION */
+   
+.stake-item {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 50%;
+     cursor: pointer;
+     border-radius: 8px;
+     padding: 0.7rem;
+   }
+   
+   .stake-item:hover {
+     background: #F6F6F6;
+   }
+   
+   .stake-item-logo {
+     width: 40px;
+   }
+   
+   .stake-button {
+     background: #0077b6;
+     color: white;
+   }

@@ -1,0 +1,30 @@
+.header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .address-widget {
+      cursor: pointer;
+      background: #0077b6;
+      color: white;
+      padding: 6px;
+      border-radius: 6px;
+      margin-left: .4rem;
+  }
+
+  .header-right {
+      display: flex;
+      align-items: center;
+  }
+
+  .buy-eth-button {
+    border: none;
+    padding: 6px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    background: #0077b6;
+    color: white;
+  }

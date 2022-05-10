@@ -1,4 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:ital,wght@0,500;0,700;1,400&display=swap');
+
+
+/* Colors */
+/* lightBlue: 48cae4 */
+/* darkBlue: 0077b6 */
+/* lightGray: F6F6F6 */
+/* darkGray: DFE0E2 */
+/* moreDarkGray: 8F939A */
+
 body {
   margin: 0;
   padding: 0;
+  font-family: "Inter", sans;
+
+}
+
+/* Utility Classes */
+
+
+.cta-button {
+  border: none;
+  padding: .8em .8em;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.small-button {
+
+  border: none;
+  padding: .5em .7em;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* Connect Wallet */
+
+
+.connect-wallet-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.connect-wallet-container h1 {
+  margin: 0;
+}
+
+.connect-wallet-container p {
+  color: #8F939A;
+}
+
+.connect-wallet-button {
+  background: #48cae4;
+  color: white;
+  transition: all 0.2s;
+}
+
+.connect-wallet-button:hover { 
+  background: #0077b6;
+}
+
+.app-container {
+  width: 80%;
+  padding: 20px;
+  margin: 0 auto;
 }
